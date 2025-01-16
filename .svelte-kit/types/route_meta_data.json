@@ -1,0 +1,25 @@
+{
+	"/": [
+		"src/routes/+page.js"
+	],
+	"/api/getEventsForVenue": [
+		"src/routes/api/getEventsForVenue/+server.js"
+	],
+	"/daily": [],
+	"/daily/[date]": [],
+	"/demo": [],
+	"/monthly": [],
+	"/monthly/[month]": [],
+	"/quarter": [],
+	"/quarter/[quarter]": [],
+	"/settings": [],
+	"/settings/create-role": [],
+	"/settings/invite-user": [],
+	"/settings/profile": [],
+	"/settings/venue/add": [],
+	"/upload-csv": [],
+	"/weekly": [],
+	"/weekly/[date]": [],
+	"/yearly": [],
+	"/yearly/[yearly]": []
+}
