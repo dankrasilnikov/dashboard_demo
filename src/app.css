@@ -7,7 +7,7 @@
 }
 
 @layer components {
- 
+
   input[type='range']::-webkit-slider-thumb {
     @apply appearance-none w-5 h-5 bg-white outline outline-2 outline-[#0284FE80] rounded-full cursor-grab;
   }
@@ -139,6 +139,10 @@ button:focus:not(:focus-visible) {
 
 .button {
 	padding: 8px 12px ;
+}
+
+.dotted-line {
+  stroke-dasharray: 6 3;
 }
 
  input{

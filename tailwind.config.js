@@ -8,6 +8,7 @@ module.exports = {
     './src/**/*.{svelte,js,ts}',
     './src/**/**/*.{svelte,js,ts}',
     "./node_modules/flowbite/**/*.js",
+    './node_modules/layerchart/**/*.{svelte,js}',
       './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'
   ],
    plugins: [require('flowbite/plugin')],

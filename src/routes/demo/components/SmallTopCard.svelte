@@ -13,7 +13,7 @@
         <div class={`${bgClass} p-4 rounded-xl`}>
             <img class="w-6 h-6" src={iconSrc} alt="icon"/>
         </div>
-        <div class="p-4">
+        <div class="pl-4">
             <p class="text-Text-Tartiary text-base">{title}</p>
             <p class="text-Text-Secondary text-2xl">{value}</p>
         </div>

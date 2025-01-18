@@ -4,6 +4,7 @@
     import CalendarIcon from '@/assets/icons/calendar.svg';
     import TicketIcon from '@/assets/icons/ticket.svg';
     import EventsList from "@/routes/demo/components/EventsList.svelte";
+    import RevenueChart from "@/routes/demo/components/RevenueChart.svelte";
 </script>
 
 <div class="grid grid-cols-1 gap-4 md:grid-cols-[2fr_1fr] p-4">
@@ -17,7 +18,7 @@
             <EventsList/>
         </div>
         <div>
-
+            <RevenueChart/>
         </div>
     </div>
 
