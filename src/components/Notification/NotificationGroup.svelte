@@ -44,10 +44,10 @@
   }
 </script>
 
-<div class="p-5">
+<div>
   {#if todayNotifications.length > 0}
     <h3 class="text-sm font-medium text-gray-500 mb-4">Today</h3>
-    <div class="flex flex-col gap-6">
+    <div class="flex flex-col gap-1">
       {#each todayNotifications as notification}
         <NotificationList
           name={notification.name}
@@ -65,7 +65,7 @@
 
   {#if earlierNotifications.length > 0}
     <h3 class="text-sm font-medium text-gray-500 mb-4">Earlier</h3>
-    <div class="flex flex-col gap-6">
+    <div class="flex flex-col gap-1">
       {#each earlierNotifications as notification}
         <NotificationList
           name={notification.name}

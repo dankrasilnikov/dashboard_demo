@@ -1,8 +1,8 @@
 <script>
-  import MessageSent from "./../../assets/icons/notifications/messagesent.svg";
-  import SoldOut from "./../../assets/icons/notifications/sold.svg";
-  import Cancelled from "./../../assets/icons/notifications/cancelled.svg";
-  import Confirmed from "./../../assets/icons/notifications/confirmed.svg";
+  import MessageSent from "../../assets/icons/notifications/messagesent.svg";
+  import SoldOut from "../../assets/icons/notifications/sold.svg";
+  import Cancelled from "../../assets/icons/notifications/cancelled.svg";
+  import Confirmed from "../../assets/icons/notifications/confirmed.svg";
 
   export let name;
   export let action;
@@ -47,12 +47,12 @@
   const icon = getStatusIcon();
 </script>
 
-<div class="flex items-start">
+<div class="flex items-center justify-center p-2">
   <div class="relative">
     <img
       src={avatar}
       alt=""
-      class="size-[44px] mr-3 rounded-[4px] relative object-cover shadow"
+      class="size-[44px] mr-3 rounded relative object-cover shadow"
     />
     {#if icon}
       <div class="absolute size-[16px] right-2 -bottom-1">
@@ -61,7 +61,7 @@
     {/if}
   </div>
   <div class="flex-1 min-w-0">
-    <p class="text-[16px] font-medium text-gray-900 leading-6">
+    <p class="text-[16px] font-medium text-gray-900 leading-6  whitespace-nowrap overflow-hidden text-ellipsis">
       {#if name}
         {name}
         {#if action}
@@ -79,11 +79,11 @@
     </p>
 
     {#if message}
-      <p class="text-[16px] font-medium leading-[24px] text-gray-500">
+      <p class="text-[16px] font-medium leading-[24px] text-gray-500 whitespace-nowrap overflow-hidden text-ellipsis">
         {message}
       </p>
     {/if}
-    <p class="text-sm leading-[17.5px] text-gray-400 font-normal mt-1">
+    <p class="text-sm leading-[17.5px] text-gray-400 font-normal mt-1 pl-0.5">
       {time}
     </p>
   </div>

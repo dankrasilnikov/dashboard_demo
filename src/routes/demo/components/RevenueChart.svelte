@@ -5,6 +5,7 @@
 
     import {Axis, Chart, Highlight, Spline, Svg, Tooltip} from 'layerchart';
     import WidgetWrapper from "@/routes/demo/components/WidgetWrapper.svelte";
+    import SwitchTicketWidgetHeading from "@/routes/demo/components/widgetHeadings/SwitchTicketWidgetHeading.svelte";
 
     const parseDate = timeParse("%Y-%m-%d");
 
@@ -35,15 +36,8 @@
 
 <WidgetWrapper>
     <div class="p-2">
-        <div class="flex flex-row justify-between mb-8">
-            <div>
-                <p class="text-gray-900 text-xl">Revenue</p>
-                <p class="text-xs text-gray-500 font-medium">Last 30 days</p>
-            </div>
-            <div class="flex flex-row items-center justify-center">
-                <button class="bg-white border-[1px] border-gray-300">Ticket Sales</button>
-                <button class="bg-primary-600 border-[1px] border-gray-300">Revenue</button>
-            </div>
+        <div class="mb-8">
+            <SwitchTicketWidgetHeading title='Revenue' description="Last 30 days"/>
         </div>
 
         <div class="h-[300px]">
