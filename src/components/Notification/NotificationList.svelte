@@ -61,7 +61,7 @@
     {/if}
   </div>
   <div class="flex-1 min-w-0">
-    <p class="text-[16px] font-medium text-gray-900 leading-6  whitespace-nowrap overflow-hidden text-ellipsis">
+    <p class="text-[16px] font-medium text-gray-900 leading-6 whitespace-nowrap overflow-hidden text-ellipsis">
       {#if name}
         {name}
         {#if action}

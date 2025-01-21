@@ -12,11 +12,12 @@
         { date: "2025-01-19", name: "The Secrets in Your Jotter", revenue: 36, progress: 25 },
     ];
 
+    let widgetTitle = widgetType === 'default' ? 'Top Events' : 'Underperforming Events';
 </script>
 
 <div class="bg-white rounded-lg shadow p-6">
     <div class="mb-4">
-        <SwitchTicketWidgetHeading title={widgetType === 'default' ? 'Top Events' : 'Underperforming Events'}/>
+        <SwitchTicketWidgetHeading expandHandler={() => {console.log(`Expand ${widgetTitle}`)}} title={widgetTitle}/>
     </div>
     <ul>
         {#each events as event}
