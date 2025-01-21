@@ -28,10 +28,10 @@
 
         <UpcomingEvents/>
         <RevenueChart/>
-<!--        <RecentOrders/>-->
+        <RecentOrders/>
     </div>
 
-    <div class="sidebar gap-4 flex-col-reverse md:flex-col">
+    <div class="sidebar gap-4 flex flex-col-reverse md:flex-col md:block">
         <NotificationsWidget/>
         <TopEventsWidget/>
         <TopEventsWidget widgetType="underperforming"/>
