@@ -11,11 +11,12 @@
         easing: cubicOut,
     });
 
+    let progressFormula = (event.ticketsSold / event.ticketsTotal) * 100;
 
-    $: progressStore.set((event.ticketsSold / event.ticketsTotal) * 100);
-    $: progressColor = $progressStore < 10
+    $: progressStore.set(progressFormula);
+    $: progressColor = progressFormula < 10
         ? 'bg-red-500'
-        : $progressStore < 70
+        : progressFormula < 70
             ? 'bg-orange-500'
             : 'bg-green-500';
 </script>
@@ -27,7 +28,7 @@
     <div class="w-full md:hidden">
         <h2 class="text-gray-900 text-sm px-4">{event.title}</h2>
 
-        <div class="flex flex-row justify-between px-4 text-gray-500 mt-4">
+        <div class="flex flex-row justify-between px-4 text-gray-500 mt-4 gap-2">
             <div class="text-xs text-left w-24 flex flex-col justify-between">
                 <p class="font-semibold">Date</p>
                 <p class="lowercase">{`${event.month} ${event.date}`}</p>
@@ -42,7 +43,7 @@
             </div>
         </div>
 
-        <div class="flex flex-row justify-between px-4 text-gray-500 mt-4">
+        <div class="flex flex-row justify-between px-4 text-gray-500 mt-4 gap-2">
             <div class="text-xs text-left w-24 flex flex-col justify-between">
                 <p class="font-semibold">Performers</p>
                 <PerformersBlock attendees={event.attendees}/>
