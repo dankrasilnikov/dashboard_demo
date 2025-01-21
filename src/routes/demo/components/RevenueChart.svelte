@@ -5,7 +5,7 @@
 
     import {Axis, Chart, Highlight, Spline, Svg, Tooltip} from 'layerchart';
     import WidgetWrapper from "@/routes/demo/components/WidgetWrapper.svelte";
-    import SwitchTicketWidgetHeading from "@/routes/demo/components/widgetHeadings/SwitchTicketWidgetHeading.svelte";
+    import SwitchTicketWidgetHeading from "@/routes/demo/components/WidgetHeadings/SwitchTicketWidgetHeading.svelte";
 
     const parseDate = timeParse("%Y-%m-%d");
 

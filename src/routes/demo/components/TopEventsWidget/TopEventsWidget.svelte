@@ -1,6 +1,6 @@
 <script lang="ts">
-    import SmallEvent from "@/routes/demo/components/eventsTop/SmallEvent.svelte";
-    import SwitchTicketWidgetHeading from "@/routes/demo/components/widgetHeadings/SwitchTicketWidgetHeading.svelte";
+    import SmallEvent from "@/routes/demo/components/TopEventsWidget/SmallEvent.svelte";
+    import SwitchTicketWidgetHeading from "@/routes/demo/components/WidgetHeadings/SwitchTicketWidgetHeading.svelte";
 
     export let widgetType: 'default' | 'underperforming' = 'default';
 

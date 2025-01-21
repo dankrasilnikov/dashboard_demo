@@ -1,8 +1,8 @@
-<!-- src/routes/demo/components/recentOrders/OrdersWidget.svelte -->
+<!-- src/routes/demo/components/RecentOrders/OrdersWidgetV1.svelte -->
 <script lang="ts">
     import { mockOrders } from "./mockOrders";
     import WidgetWrapper from "@/routes/demo/components/WidgetWrapper.svelte";
-    import SimpleWidgetHeading from "@/routes/demo/components/widgetHeadings/SimpleWidgetHeading.svelte";
+    import SimpleWidgetHeading from "@/routes/demo/components/WidgetHeadings/SimpleWidgetHeading.svelte";
     import Table from "@/components/Table/Table.svelte";
 
     // Define the columns for the table

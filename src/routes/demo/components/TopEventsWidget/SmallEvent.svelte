@@ -1,12 +1,23 @@
 <script lang="ts">
+    import {tweened} from 'svelte/motion';
+    import {cubicOut} from "svelte/easing";
+    import {getRandomInt} from "@/utils/utils/getRandom";
+
     export let event;
     export let tableType: 'default' | 'underperforming' = 'default';
 
     let {date, name, revenue, progress} = event;
+
+    const progressStore = tweened(0, {
+        duration: getRandomInt(600, 750),
+        easing: cubicOut,
+    });
+
+    $progressStore = progress;
 </script>
 
 <li class="flex justify-between items-center mb-2 relative">
-    <span style={`right: ${100 - progress}%;`} class={`absolute left-0 top-0 bottom-0 z-0 rounded`}
+    <span style={`right: ${100 - $progressStore}%;`} class={`absolute left-0 top-0 bottom-0 z-0 rounded`}
           class:bg-primary-50={tableType === 'default'}
           class:bg-red-50={tableType === 'underperforming'}></span>
     <div class="flex space-x-4 items-center z-10 p-2">

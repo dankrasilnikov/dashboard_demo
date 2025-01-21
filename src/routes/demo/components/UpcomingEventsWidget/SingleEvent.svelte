@@ -1,5 +1,17 @@
 <script lang="ts">
+    import {tweened} from "svelte/motion";
+    import {getRandomInt} from "@/utils/utils/getRandom";
+    import {cubicOut} from "svelte/easing";
+
     export let event;
+
+    const progressStore = tweened(0, {
+        duration: getRandomInt(600, 850),
+        easing: cubicOut,
+    });
+
+    $progressStore = (event.ticketsSold / event.ticketsTotal) * 100;
+
 </script>
 
 <li class="flex items-center justify-between pr-4 border-b last:border-b-0 gap-9 p-3">
@@ -22,7 +34,7 @@
                     <img
                             src={attendee.src}
                             alt={attendee.alt}
-                            class="w-6 h-6 rounded-full border-2 border-white"
+                            class="w-6 h-6 rounded-full border-2 border-white bg-Hue-Violet"
                     />
                 {/each}
                 <div class="w-6 h-6 rounded-full bg-gray-200 text-xs flex items-center justify-center text-gray-500 border-2 border-white">
@@ -38,7 +50,7 @@
         <div class="h-2 bg-gray-200 rounded-full">
             <div
                     class={`h-2 rounded-full ${event.progressColor}`}
-                    style="width: {(event.ticketsSold / event.ticketsTotal) * 100}%"
+                    style="width: {$progressStore}%"
             ></div>
         </div>
         <p class="text-xs text-gray-500 mt-1">{event.inCart} in cart</p>
