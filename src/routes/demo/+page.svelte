@@ -8,12 +8,10 @@
     import TopEventsWidget from "@/routes/demo/components/TopEventsWidget/TopEventsWidget.svelte";
     import RecentOrders from "@/routes/demo/components/RecentOrders";
     import UpcomingEvents from "@/routes/demo/components/UpcomingEventsWidget/UpcomingEventsWidget.svelte";
+    import Header from "@/routes/demo/components/Header.svelte";
 </script>
 
-<header class="px-4 py-2 bg-white border-gray-300 border-[1px]">
-    <h1 class="text-black text-lg text-left">Dashboard</h1>
-    <p class="text-[#6B7280] text-sm">Last 30 days</p>
-</header>
+<Header/>
 
 <div class="grid grid-cols-1 gap-4 lg:grid-cols-[2fr_1fr] p-4">
     <div class="flex flex-col gap-y-4 md:gap-y-8">
