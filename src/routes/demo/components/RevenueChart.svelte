@@ -24,7 +24,7 @@
         previous: '#60A5FA',
     };
 
-    const yTickValues = [0, 25000, 50000, 100000];
+    const yTickValues = [0, 10000, 25000, 50000, 100000];
 </script>
 
 <WidgetWrapper>
