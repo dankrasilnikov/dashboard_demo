@@ -1,1 +1,1 @@
-export { default } from './OrdersWidgetV1.svelte';
+export { default } from './OrdersWidgetV2.svelte';
