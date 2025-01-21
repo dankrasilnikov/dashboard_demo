@@ -1,1 +1,0 @@
-export { default as component } from "../../../../src/routes/settings/create-role/+page.svelte";
