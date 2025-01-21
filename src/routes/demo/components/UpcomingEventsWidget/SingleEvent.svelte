@@ -2,6 +2,7 @@
     import {tweened} from "svelte/motion";
     import {getRandomInt} from "@/utils/utils/getRandom";
     import {cubicOut} from "svelte/easing";
+    import PerformersBlock from "@/routes/demo/components/UpcomingEventsWidget/ui/PerformersBlock.svelte";
 
     export let event;
 
@@ -10,54 +11,90 @@
         easing: cubicOut,
     });
 
-    $progressStore = (event.ticketsSold / event.ticketsTotal) * 100;
 
+    $: progressStore.set((event.ticketsSold / event.ticketsTotal) * 100);
+    $: progressColor = $progressStore < 10
+        ? 'bg-red-500'
+        : $progressStore < 70
+            ? 'bg-orange-500'
+            : 'bg-green-500';
 </script>
 
-<li class="flex items-center justify-between pr-4 border-b last:border-b-0 gap-9 p-3">
-    <!-- Date -->
-    <div class="flex-shrink-0 text-center w-12">
-        <p class="text-Text-Tartiary text-[0.5rem] uppercase">{'FRI'.toUpperCase()}</p>
-        <p class="text-brand-Primary text-xl/[20px]">{event.date.toUpperCase()}</p>
-        <p class="text-Text-Tartiary text-[0.5rem] uppercase">{event.month.toUpperCase()}</p>
-    </div>
+<li class="flex flex-col md:flex-row justify-between items-center px-4 py-6 md:p-6 border-b last:border-b-0 gap-6 md:gap-0">
 
-    <div class="flex gap-1 flex-col w-[45%]">
-        <p class="text-sm text-Text-Primary">{event.title}</p>
-        <p class="text-xs text-Text-Tartiary">{event.time}</p>
-    </div>
+<!--    MOBILE-->
 
-    <div class="flex flex-row">
-        <div class="mt-2 flex items-center w-[100%]">
-            <div class="flex -space-x-2">
-                {#each event.attendees.slice(0, 3) as attendee}
-                    <img
-                            src={attendee.src}
-                            alt={attendee.alt}
-                            class="w-6 h-6 rounded-full border-2 border-white bg-Hue-Violet"
-                    />
-                {/each}
-                <div class="w-6 h-6 rounded-full bg-gray-200 text-xs flex items-center justify-center text-gray-500 border-2 border-white">
-                    +{event.attendees.length - 3}
+    <div class="w-full md:hidden">
+        <h2 class="text-gray-900 text-sm px-4">{event.title}</h2>
+
+        <div class="flex flex-row justify-between px-4 text-gray-500 mt-4">
+            <div class="text-xs text-left w-24 flex flex-col justify-between">
+                <p class="font-semibold">Date</p>
+                <p class="lowercase">{`${event.month} ${event.date}`}</p>
+            </div>
+            <div class="text-xs text-left w-24 flex flex-col justify-between">
+                <p class="font-semibold">Time</p>
+                <p class="uppercase">{event.time}</p>
+            </div>
+            <div class="text-xs text-left w-24 flex flex-col justify-between">
+                <p class="font-semibold">Revenue</p>
+                <p class="lowercase text-green-500">{event.revenue}</p>
+            </div>
+        </div>
+
+        <div class="flex flex-row justify-between px-4 text-gray-500 mt-4">
+            <div class="text-xs text-left w-24 flex flex-col justify-between">
+                <p class="font-semibold">Performers</p>
+                <PerformersBlock attendees={event.attendees}/>
+            </div>
+
+            <div class="text-xs text-left w-24 flex flex-col justify-between">
+                <p class="font-semibold">Tickets</p>
+                <p class="mb-1.5">{event.ticketsSold}/{event.ticketsTotal}</p>
+                <div class="h-2 bg-gray-200 rounded-full">
+                    <div
+                            class={`h-2 rounded-full ${progressColor}`}
+                            style="width: {$progressStore}%"
+                    ></div>
                 </div>
+            </div>
+
+            <div class="text-xs text-left w-24 flex flex-col justify-between">
+                <p class="font-semibold">In Cart</p>
+                <p>{event.inCart}</p>
             </div>
         </div>
     </div>
 
-    <!-- Progress Bar -->
-    <div class="w-24 flex flex-col justify-end text-right">
-        <p class="text-xs text-gray-500 mb-1.5">{event.ticketsSold}/{event.ticketsTotal}</p>
-        <div class="h-2 bg-gray-200 rounded-full">
-            <div
-                    class={`h-2 rounded-full ${event.progressColor}`}
-                    style="width: {$progressStore}%"
-            ></div>
-        </div>
-        <p class="text-xs text-gray-500 mt-1">{event.inCart} in cart</p>
-    </div>
+<!--    DESKTOP-->
 
-    <!-- Revenue -->
-    <div class="flex-shrink-0 text-right w-16">
-        <p class="text-sm font-semibold text-green-500">${event.revenue}</p>
+    <div class="hidden md:flex w-full items-center flex-col md:flex-row justify-between">
+        <div class="flex-shrink-0 text-center w-12">
+            <p class="text-Text-Tartiary text-[0.5rem] uppercase hidden md:block">{'FRI'}</p>
+            <p class="text-brand-Primary text-xl/[20px] hidden md:block">{event.date}</p>
+            <p class="text-Text-Tartiary text-[0.5rem] uppercase hidden md:block">{event.month}</p>
+        </div>
+
+        <div class="flex gap-1 flex-col w-[45%]">
+            <p class="text-sm text-Text-Primary">{event.title}</p>
+            <p class="text-xs text-Text-Tartiary">{event.time}</p>
+        </div>
+
+        <PerformersBlock attendees={event.attendees}/>
+
+        <div class="w-24 flex flex-col justify-end text-right">
+            <p class="text-xs text-gray-500 mb-1.5">{event.ticketsSold}/{event.ticketsTotal}</p>
+            <div class="h-2 bg-gray-200 rounded-full">
+                <div
+                        class={`h-2 rounded-full ${progressColor}`}
+                        style="width: {$progressStore}%"
+                ></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-1">{event.inCart} in cart</p>
+        </div>
+
+        <div class="flex-shrink-0 text-right w-16">
+            <p class="text-sm font-semibold text-green-500">${event.revenue}</p>
+        </div>
     </div>
 </li>

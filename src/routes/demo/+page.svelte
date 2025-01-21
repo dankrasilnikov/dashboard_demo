@@ -26,12 +26,12 @@
                           percent="3"/>
         </div>
 
-<!--        <UpcomingEvents/>-->
+        <UpcomingEvents/>
         <RevenueChart/>
 <!--        <RecentOrders/>-->
     </div>
 
-    <div class="sidebar gap-4 flex flex-col">
+    <div class="sidebar gap-4 flex-col-reverse md:flex-col">
         <NotificationsWidget/>
         <TopEventsWidget/>
         <TopEventsWidget widgetType="underperforming"/>
