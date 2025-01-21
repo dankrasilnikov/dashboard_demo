@@ -2,8 +2,9 @@
     import {scaleTime} from 'd3-scale';
     import {timeParse} from 'd3-time-format';
     import {format} from 'date-fns';
+    import { mdScreen } from '@layerstack/svelte-stores';
 
-    import {Axis, Chart, Highlight, Spline, Svg, Tooltip} from 'layerchart';
+    import {Axis, Chart, Grid, Highlight, Spline, Svg, Tooltip} from 'layerchart';
     import WidgetWrapper from "@/routes/demo/components/WidgetWrapper.svelte";
     import SwitchTicketWidgetHeading from "@/routes/demo/components/WidgetHeadings/SwitchTicketWidgetHeading.svelte";
 
@@ -23,7 +24,7 @@
         previous: '#60A5FA',
     };
 
-    const yTickValues = [0, 20000, 40000, 60000, 80000, 100000];
+    const yTickValues = [0, 25000, 50000, 100000];
 </script>
 
 <WidgetWrapper>
@@ -50,7 +51,7 @@
                 <Svg>
                     <Axis
                             placement="left"
-                            grid
+                            grid={{ style: "stroke-dasharray: 2; color: #000; background:#000;" }}
                             rule
                             format={(value) => `$${value.toLocaleString()}`}
                             ticks={yTickValues}
@@ -60,7 +61,7 @@
                             placement="bottom"
                             rule
                             format={(d) => format(d, "dd MMM")}
-                            ticks={7}
+                            ticks={$mdScreen ? 7 : 3}
                     />
 
                     <Spline y={(d) => d.y} class="stroke-2" stroke={mockCharts.total}/>
