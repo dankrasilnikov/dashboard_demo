@@ -36,7 +36,7 @@
                 <p class="font-semibold">Time</p>
                 <p class="uppercase">{event.time}</p>
             </div>
-            <div class="text-xs text-left w-24 flex flex-col justify-between">
+            <div class="text-xs text-left w-16 flex flex-col justify-between">
                 <p class="font-semibold">Revenue</p>
                 <p class="lowercase text-green-500">{event.revenue}</p>
             </div>
@@ -59,7 +59,7 @@
                 </div>
             </div>
 
-            <div class="text-xs text-left w-24 flex flex-col justify-between">
+            <div class="text-xs text-left w-16 flex flex-col justify-between">
                 <p class="font-semibold">In Cart</p>
                 <p>{event.inCart}</p>
             </div>
