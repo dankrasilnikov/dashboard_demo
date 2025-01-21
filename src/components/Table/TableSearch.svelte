@@ -1,5 +1,5 @@
 <script>
-  import { cn } from './../../utils/utils'
+  import { cn } from '@/utils/utils.js'
 
   export let style = ''
   export let placeholder = 'Search...'

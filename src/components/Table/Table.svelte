@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { createTableStore } from "./../../stores/tableStore";
+  import { createTableStore } from "@/stores/tableStore";
   import { onDestroy, onMount } from "svelte";
   import type { Writable } from "svelte/store";
   import { writable } from "svelte/store";
   import type { TableColumn, TableProps } from "./types";
 
-  import { cn } from "./../../utils/utils";
+  import { cn } from "@/utils/utils";
   import ExpandedRow from "./ExpandedRow.svelte";
   import TableHead from "./TableHead.svelte";
   import TablePagination from "./TablePagination.svelte";
@@ -79,7 +79,7 @@
   };
 
   $: {
-    searchQuery.subscribe((value) => {
+    searchQuery ? searchQuery.subscribe((value) => {
       const filtered = data.filter((row) => {
         return columns.some((column) => {
           const cellValue = row[column.key] ?? "";
@@ -91,7 +91,7 @@
       });
       filteredData.set(filtered);
       filterData(value);
-    });
+    }) : ''
   }
 
   $: filteredColumns = columns;
@@ -128,7 +128,7 @@
 >
   {#if searchable}
     <TableSearch
-      style="p-3 rounded-md w-full"
+      style={`p-3 rounded-md w-full`}
       placeholder="Search..."
       bind:searchQuery
     />

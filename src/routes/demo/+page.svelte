@@ -3,7 +3,6 @@
     import MoneyIcon from '@/assets/icons/money.svg';
     import CalendarIcon from '@/assets/icons/calendar.svg';
     import TicketIcon from '@/assets/icons/ticket.svg';
-    import EventsList from "@/routes/demo/components/EventsList.svelte";
     import RevenueChart from "@/routes/demo/components/RevenueChart.svelte";
     import NotificationsWidget from "@/routes/demo/components/notifications/NotificationsWidget.svelte";
     import TopEventsWidget from "@/routes/demo/components/eventsTop/TopEventsWidget.svelte";
@@ -21,6 +20,7 @@
             <SmallTopCard title="Total Events" iconSrc={TicketIcon} bgClass="bg-accent-Warning/15" value="36"
                           percent="3"/>
         </div>
+
         <UpcomingEvents/>
         <RevenueChart/>
         <OrdersWidget/>
