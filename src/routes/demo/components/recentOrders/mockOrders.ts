@@ -1,16 +1,21 @@
+import InstagramIcon from '@/assets/icons/social/instagram.svg'
+import FacebookIcon from '@/assets/icons/social/facebook.svg'
+import EventbriteIcon from '@/assets/icons/social/eventbrite.svg'
+import TwitterIcon from '@/assets/icons/social/twitter.svg'
+
 export const mockOrders = [
     {
         orderId: "#0912",
         dateOfPurchase: "Fri, Jul 26, 2024",
         event: {
             name: "Laugh Riot",
-            imageUrl: "https://example.com/images/laugh-riot.png", // Replace with actual image URL
+            imageUrl: "https://example.com/images/laugh-riot.png",
         },
         customer: "Melissa Crew",
         noOfTickets: 6,
         salesChannel: {
             name: "Instagram",
-            iconUrl: "https://example.com/icons/instagram.png", // Replace with actual icon URL
+            iconUrl: InstagramIcon,
         },
         orderTotal: "$84",
     },
@@ -25,7 +30,7 @@ export const mockOrders = [
         noOfTickets: 3,
         salesChannel: {
             name: "Twitter / X",
-            iconUrl: "https://example.com/icons/twitter.png",
+            iconUrl: TwitterIcon,
         },
         orderTotal: "$72",
     },
@@ -40,7 +45,7 @@ export const mockOrders = [
         noOfTickets: 2,
         salesChannel: {
             name: "Instagram",
-            iconUrl: "https://example.com/icons/instagram.png",
+            iconUrl: InstagramIcon,
         },
         orderTotal: "$48",
     },
@@ -55,7 +60,7 @@ export const mockOrders = [
         noOfTickets: 1,
         salesChannel: {
             name: "Eventbrite",
-            iconUrl: "https://example.com/icons/eventbrite.png",
+            iconUrl: EventbriteIcon,
         },
         orderTotal: "$24",
     },
@@ -70,7 +75,7 @@ export const mockOrders = [
         noOfTickets: 3,
         salesChannel: {
             name: "Facebook",
-            iconUrl: "https://example.com/icons/facebook.png",
+            iconUrl: FacebookIcon,
         },
         orderTotal: "$72",
     },
@@ -85,7 +90,7 @@ export const mockOrders = [
         noOfTickets: 5,
         salesChannel: {
             name: "Facebook",
-            iconUrl: "https://example.com/icons/facebook.png",
+            iconUrl: FacebookIcon,
         },
         orderTotal: "$121",
     },
