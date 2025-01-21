@@ -4,7 +4,7 @@
     import {format} from 'date-fns';
     import { mdScreen } from '@layerstack/svelte-stores';
 
-    import {Axis, Chart, Grid, Highlight, Spline, Svg, Tooltip} from 'layerchart';
+    import {Axis, Chart, Highlight, Spline, Svg, Tooltip} from 'layerchart';
     import WidgetWrapper from "@/routes/demo/components/WidgetWrapper.svelte";
     import SwitchTicketWidgetHeading from "@/routes/demo/components/WidgetHeadings/SwitchTicketWidgetHeading.svelte";
 

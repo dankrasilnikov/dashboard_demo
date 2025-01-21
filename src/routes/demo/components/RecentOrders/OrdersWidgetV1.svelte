@@ -5,28 +5,24 @@
     import SimpleWidgetHeading from "@/routes/demo/components/WidgetHeadings/SimpleWidgetHeading.svelte";
     import Table from "@/components/Table/Table.svelte";
 
-    // Define the columns for the table
     const columns = [
         { key: "orderId", title: "ORDER ID" },
         { key: "dateOfPurchase", title: "DATE OF PURCHASE" },
-        { key: "event", title: "EVENT", slot: true }, // Indicate that this column uses a slot
+        { key: "event", title: "EVENT", slot: true },
         { key: "customer", title: "CUSTOMER" },
         { key: "noOfTickets", title: "NO. OF TICKETS" },
-        { key: "salesChannel", title: "SALES CHANNEL", slot: true }, // Indicate that this column uses a slot
+        { key: "salesChannel", title: "SALES CHANNEL", slot: true },
         { key: "orderTotal", title: "ORDER TOTAL" },
     ];
 
-    // Initialize the search query as an empty string
-
-    // Define pagination settings if needed
     const paginated = {
-        status: false, // Set to true if you want pagination
+        status: false,
         totalPages: 0,
         pageSize: 10,
     };
 
     const expandHandler = () => {
-        // Implement expand handler logic if needed
+
     };
 </script>
 
