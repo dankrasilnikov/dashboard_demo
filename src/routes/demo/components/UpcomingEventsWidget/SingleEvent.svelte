@@ -22,7 +22,7 @@
 
 <li class="flex flex-col md:flex-row justify-between items-center px-4 py-6 md:p-6 border-b last:border-b-0 gap-6 md:gap-0">
 
-<!--    MOBILE-->
+    <!--MOBILE-->
 
     <div class="w-full md:hidden">
         <h2 class="text-gray-900 text-sm px-4">{event.title}</h2>
@@ -66,7 +66,7 @@
         </div>
     </div>
 
-<!--    DESKTOP-->
+    <!--DESKTOP-->
 
     <div class="hidden md:flex w-full items-center flex-col md:flex-row justify-between">
         <div class="flex-shrink-0 text-center w-12">
@@ -75,7 +75,7 @@
             <p class="text-Text-Tartiary text-[0.5rem] uppercase hidden md:block">{event.month}</p>
         </div>
 
-        <div class="flex gap-1 flex-col w-[45%]">
+        <div class="flex gap-1 flex-col max-w-[45%] w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
             <p class="text-sm text-Text-Primary">{event.title}</p>
             <p class="text-xs text-Text-Tartiary">{event.time}</p>
         </div>

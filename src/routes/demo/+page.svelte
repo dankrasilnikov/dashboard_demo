@@ -15,7 +15,7 @@
     <p class="text-[#6B7280] text-sm">Last 30 days</p>
 </header>
 
-<div class="grid grid-cols-1 gap-4 md:grid-cols-[2fr_1fr] p-4">
+<div class="grid grid-cols-1 gap-4 lg:grid-cols-[2fr_1fr] p-4">
     <div class="flex flex-col gap-y-4 md:gap-y-8">
         <div class="flex justify-between flex-col md:flex-row gap-4">
             <SmallTopCard title="Revenue" iconSrc={MoneyIcon} bgClass="bg-accent-success/15" value="$6,397"
@@ -31,7 +31,7 @@
         <RecentOrders/>
     </div>
 
-    <div class="sidebar gap-4 flex flex-col-reverse md:flex-col md:block">
+    <div class="gap-4 flex flex-col-reverse lg:flex-col">
         <NotificationsWidget/>
         <TopEventsWidget/>
         <TopEventsWidget widgetType="underperforming"/>
