@@ -42,7 +42,7 @@ export const mockNotifications = [
         action: null,
         event: "Jetpack Comedy is sold out",
         message: "",
-        time: new Date(now.getTime() - 24 * 60 * 60 * 1000), // Вчера
+        time: new Date(now.getTime() - 24 * 60 * 60 * 1000),
         avatar: "https://randomuser.me/api/portraits/men/5.jpg",
         status: "show sold out",
     },
@@ -51,7 +51,7 @@ export const mockNotifications = [
         action: null,
         event: "The Jetpack Comedy Show just sold out",
         message: "Thursday, 8:30pm",
-        time: new Date(now.getTime() - 24 * 60 * 60 * 1000), // Вчера
+        time: new Date(now.getTime() - 24 * 60 * 60 * 1000),
         avatar: "https://randomuser.me/api/portraits/women/6.jpg",
         status: "show sold out",
     },
@@ -60,7 +60,7 @@ export const mockNotifications = [
         action: null,
         event: "6 VIP tickets sold for The Black Lady Sketch Show",
         message: "85/100 sold",
-        time: new Date(now.getTime() - 3 * 24 * 60 * 60 * 1000), // Несколько дней назад
+        time: new Date(now.getTime() - 3 * 24 * 60 * 60 * 1000),
         avatar: "https://randomuser.me/api/portraits/men/7.jpg",
         status: "ticket sold",
     },
