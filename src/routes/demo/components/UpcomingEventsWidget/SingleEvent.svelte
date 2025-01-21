@@ -21,7 +21,7 @@
             : 'bg-green-500';
 </script>
 
-<li class="flex flex-col md:flex-row justify-between items-center px-4 py-6 md:p-6 border-b last:border-b-0 gap-6 md:gap-0">
+<li class="flex flex-col md:flex-row justify-between items-center py-6 md:p-6 border-b last:border-b-0 gap-6 md:gap-0">
 
     <!--MOBILE-->
 
